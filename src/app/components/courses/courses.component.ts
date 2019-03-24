@@ -13,7 +13,7 @@ export class CoursesComponent implements OnInit {
   data: Course[] = [];
   CourseModel = new Course();
   page = 1;
-  pageSize = 1;
+  pageSize = 5;
   collectionSize = 10;
   closeResult: string;
   creating: Boolean = true;

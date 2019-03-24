@@ -59,8 +59,8 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" ngbAutofocus class="btn btn-primary" (click)="update();modal.close('Ok click')">Update</button>
-    <button type="button" ngbAutofocus class="btn btn-primary" (click)="create();modal.close('Ok click')">Save</button>
+    <button type="button" [hidden]="creating" ngbAutofocus class="btn btn-primary" (click)="update();modal.close('Ok click')">Update</button>
+    <button type="button" [hidden]="!creating" ngbAutofocus class="btn btn-primary" (click)="create();modal.close('Ok click')">Save</button>
     <button type="button" class="btn btn-danger" (click)="modal.close('Ok click')">Cancel</button>
   </div>
 </ng-template>
