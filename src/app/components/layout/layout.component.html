@@ -6,7 +6,7 @@
         <h1 class="jumbotron-heading">Hi, I'm a React Developer</h1>
         <p class="lead text-muted">I'm building a litle project with Angular + TypeScript + Firebase.</p>
         <p>
-          <a href="#" class="btn btn-primary my-2" (click)="open(content)">Contact Me</a>
+          <button class="btn btn-primary my-2" (click)="open(content)">Contact Me </button>
         </p>
       </div>
     </section>
@@ -24,15 +24,18 @@
 <ng-template #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-title">Hi!!!!</h4>
-    <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+    <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title"
+      (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <p><strong>I'm <span class="text-success">"Guillermo David Paredes Torrez"</span>. I'm a  <span class="text-primary">Software Enginner | Geek | React Developer | React Bolivia</span></strong></p>
+    <p><strong>I'm <span class="text-success">"Guillermo David Paredes Torrez"</span>. I'm a <span
+          class="text-primary">Software Enginner | Geek | React Developer | React Bolivia</span></strong></p>
     <p>with specialty on Frontend and Javascript (React.js, React Native, Nodejs, Express, Graphql).
-        Always I'm learning new techniques, tips in technologies for tomorrow.
-        <span class="text-success">I'm lead organizer the first comunity of ReactBolivia</span> , where the comunity has workshops, conferences, about the last technologies.
+      Always I'm learning new techniques, tips in technologies for tomorrow.
+      <span class="text-success">I'm lead organizer the first comunity of ReactBolivia</span> , where the comunity has
+      workshops, conferences, about the last technologies.
 
     </p>
   </div>
