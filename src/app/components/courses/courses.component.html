@@ -1,0 +1,66 @@
+<button class="btn btn-primary my-2 float-right" (click)="openNewCourse(addNewCourse)">
+  Add new course
+</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Course</th>
+      <th scope="col">Area</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of courses">
+      <th scope="row">{{ course.index }}</th>
+      <td>
+        {{ course.name }}
+      </td>
+      <td>{{ course.area }}</td>
+      <td>
+        <button class="btn btn-warning text-white" (click)="openUpdateCourse(addNewCourse, course)">Update</button>
+      </td>
+      <td>
+        <button  class="btn btn-danger" (click)="delete(course.id)">Delete</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+  </ngb-pagination>
+</div>
+
+
+
+<ng-template #addNewCourse let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Formulario</h4>
+    <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title"
+      (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Course</label>
+        <div class="input-group">
+          <input id="course"  [(ngModel)]="CourseModel.name"  class="form-control" placeholder="name Course" name="course">
+        </div>
+        <label for="dateOfBirth">Area</label>
+        <div class="input-group">
+          <input id="area"  [(ngModel)]="CourseModel.area" class="form-control" placeholder="name area" name="area">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" ngbAutofocus class="btn btn-primary" (click)="update();modal.close('Ok click')">Update</button>
+    <button type="button" ngbAutofocus class="btn btn-primary" (click)="create();modal.close('Ok click')">Save</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close('Ok click')">Cancel</button>
+  </div>
+</ng-template>
